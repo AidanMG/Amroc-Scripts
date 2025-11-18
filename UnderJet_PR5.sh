@@ -17,10 +17,10 @@ module load StdEnv/2018.3
 module load python/2.7.14
 #module load openmpi/3.1.2
 export ncores=192
-sourcedir=$HOME/links
+sourcedir=$HOME
 amrocfold=amroc
 settingsfold=Testrun
-outfold=UnderExpandedJet_PR5_0_LowRes
+outfold=UnderExpandedJet_PR5_0_Reactive
 appfold=euler_chem
 simfold=2d/Shocktube/Lietal_2003/ShockTube
 contd=0
@@ -30,24 +30,24 @@ files_to_copy=("display*.in"  \
 dirs_to_copy=("../src" "../../src")
 # if contd, set also solver to 1
 
-cd $sourcedir/projects/def-hoing/aidanmg/$amrocfold/vtf
+cd $VTF_DIR
 source ac/paths.sh gnu-opt-mpi
 
 # Create the output directory in scratch
 if [[ $contd -eq 0 ]]; then
-	mkdir $sourcedir/scratch/$outfold
+	mkdir $SCRATCH/$outfold
 fi
-cd  $sourcedir/scratch/$outfold
+cd  $SCRATCH/$outfold
 
-# Copy the files over
+# Copy the files over, unless continuing
 if [[ $contd -eq 0 ]]; then
 	for filename in "${files_to_copy[@]}"; do
-		cp $sourcedir/projects/def-hoing/aidanmg/$amrocfold/vtf/amroc/clawpack/applications/$appfold/$simfold/$filename ./
+		cp $VTF_DIR/amroc/clawpack/applications/$appfold/$simfold/$filename ./
 	done
 	for dirname in "${dirs_to_copy[@]}"; do
-		cp -r $sourcedir/projects/def-hoing/aidanmg/$amrocfold/vtf/amroc/clawpack/applications/$appfold/$simfold/$dirname ./
+		cp -r $VTF_DIR/amroc/clawpack/applications/$appfold/$simfold/$dirname ./
 	done
 fi
 
-$sourcedir/projects/def-hoing/aidanmg/$amrocfold/vtf/amroc/clawpack/applications/$appfold/$simfold/run.py $ncores
+$VTF_DIR/amroc/clawpack/applications/$appfold/$simfold/run.py $ncores
 

@@ -5,7 +5,7 @@
 #SBATCH --mail-type=FAIL
 #SBATCH --time=24:0:0
 #SBATCH --account=def-hoing
-#SBATCH --job-name=1000_PR5_0_UnderJet
+#SBATCH --job-name=1100_PR5_0_UnderJet
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=192
 #SBATCH --mem-per-cpu=1000M
@@ -20,7 +20,7 @@ export ncores=192
 sourcedir=$HOME
 amrocfold=amroc
 settingsfold=Testrun
-outfold=1000K_UnderExpandedJet_PR5_0_Reactive
+outfold=1100K_UnderExpandedJet_PR5_0_Reactive
 appfold=euler_chem
 simfold=2d/Shocktube/Lietal_2003/ShockTube
 contd=0

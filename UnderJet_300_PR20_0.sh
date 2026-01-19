@@ -23,7 +23,7 @@ settingsfold=Testrun
 outfold=300_PR20_0_UnderJet
 appfold=euler_chem
 simfold=2d/Shocktube/Lietal_2003/300_PR20_0
-contd=0
+contd=1
 files_to_copy=("display*.in"  \
 				"init.dat" \
 				"run.py" "solver.in")

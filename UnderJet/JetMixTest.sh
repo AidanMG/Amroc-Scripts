@@ -5,7 +5,7 @@
 #SBATCH --mail-type=FAIL
 #SBATCH --time=24:0:0
 #SBATCH --account=def-hoing
-#SBATCH --job-name=1100_PR5_0_UnderJet
+#SBATCH --job-name=JetMixTest
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=192
 #SBATCH --mem-per-cpu=1000M
@@ -20,13 +20,14 @@ export ncores=192
 sourcedir=$HOME
 amrocfold=amroc
 settingsfold=Testrun
-outfold=1100K_UnderExpandedJet_PR5_0_Reactive
+outfold=jet_mixing
 appfold=euler_chem
-simfold=2d/Shocktube/Lietal_2003/ShockTube
-contd=1
-files_to_copy=("display*.in"  \
-				"init.dat" \
+simfold=2d/Shocktube/Lietal_2003/jet_mixing
+contd=0
+files_to_copy=("display*.in" "source_toggle.dat" \
+				"init.dat" "split_toggle.dat" \
 				"run.py" "solver.in")
+
 dirs_to_copy=("../src" "../../src")
 # if contd, set also solver to 1
 

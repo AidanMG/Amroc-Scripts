@@ -5,7 +5,7 @@
 #SBATCH --mail-type=FAIL
 #SBATCH --time=24:0:0
 #SBATCH --account=def-hoing
-#SBATCH --job-name=300_PR20_0_UnderJet
+#SBATCH --job-name=Air_1200_PR20_0_UnderJet
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=192
 #SBATCH --mem-per-cpu=1000M
@@ -20,12 +20,12 @@ export ncores=192
 sourcedir=$HOME
 amrocfold=amroc
 settingsfold=Testrun
-outfold=300_PR20_0_UnderJet
+outfold=1200_PR20_0_Air_UnderJet
 appfold=euler_chem
-simfold=2d/Shocktube/Lietal_2003/300_PR20_0
-contd=1
+simfold=2d/Shocktube/Lietal_2003/1200_PR20_0_Air
+contd=0
 files_to_copy=("display*.in"  \
-				"init.dat" \
+				"init.dat" "source_toggle.dat"\
 				"run.py" "solver.in")
 dirs_to_copy=("../src" "../../src")
 # if contd, set also solver to 1

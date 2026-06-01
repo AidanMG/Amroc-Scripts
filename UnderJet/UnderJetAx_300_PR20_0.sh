@@ -5,9 +5,9 @@
 #SBATCH --mail-type=FAIL
 #SBATCH --time=24:0:0
 #SBATCH --account=def-hoing
-#SBATCH --job-name=300_PR10_0_UnderJet
+#SBATCH --job-name=Ax_300_PR20_0_UnderJet
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=192
+#SBATCH --ntasks-per-node=16
 #SBATCH --mem-per-cpu=1000M
 #SBATCH --output=%x-%j.out
 
@@ -16,17 +16,18 @@
 module load StdEnv/2018.3
 module load python/2.7.14
 #module load openmpi/3.1.2
-export ncores=192
+export ncores=16
 sourcedir=$HOME
 amrocfold=amroc
 settingsfold=Testrun
-outfold=300_PR10_0_UnderJet
+outfold=Ax_300_PR20_0_UnderJet
 appfold=euler_chem
-simfold=2d/Shocktube/Lietal_2003/300_PR10_0
+simfold=2d/Shocktube/Lietal_2003/300_PR20_0_Ax
 contd=0
-files_to_copy=("display*.in"  \
+files_to_copy=("display*.in" "source_toggle.dat" \
 				"init.dat" \
 				"run.py" "solver.in")
+
 dirs_to_copy=("../src" "../../src")
 # if contd, set also solver to 1
 

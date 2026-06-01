@@ -16,7 +16,7 @@
 module load StdEnv/2018.3
 module load python/2.7.14
 #module load openmpi/3.1.2
-export ncores=192
+export ncores=2
 sourcedir=$HOME
 amrocfold=amroc
 settingsfold=Testrun

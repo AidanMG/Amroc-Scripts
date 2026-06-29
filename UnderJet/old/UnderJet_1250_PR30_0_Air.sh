@@ -5,7 +5,7 @@
 #SBATCH --mail-type=FAIL
 #SBATCH --time=24:0:0
 #SBATCH --account=def-hoing
-#SBATCH --job-name=Air_1200_PR25_0_UnderJet
+#SBATCH --job-name=Air_1250_PR30_0_UnderJet
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=192
 #SBATCH --mem-per-cpu=1000M
@@ -16,13 +16,13 @@
 module load StdEnv/2018.3
 module load python/2.7.14
 #module load openmpi/3.1.2
-export ncores=2
+export ncores=192
 sourcedir=$HOME
 amrocfold=amroc
 settingsfold=Testrun
-outfold=1200_PR25_0_Air_UnderJet
+outfold=1250_PR30_0_Air_UnderJet
 appfold=euler_chem
-simfold=2d/Shocktube/Lietal_2003/1200_PR25_0_Air
+simfold=2d/Shocktube/Lietal_2003/1250_PR30_0_Air
 contd=0
 files_to_copy=("display*.in"  \
 				"init.dat" "source_toggle.dat"\

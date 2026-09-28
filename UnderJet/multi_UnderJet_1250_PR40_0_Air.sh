@@ -5,7 +5,7 @@
 #SBATCH --mail-type=FAIL
 #SBATCH --time=24:0:0
 #SBATCH --account=def-hoing
-#SBATCH --job-name=multi_long_Inert_1250_PR40_0_UnderJet
+#SBATCH --job-name=multi_Air_1250_PR40_0_UnderJet
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=192
 #SBATCH --mem-per-cpu=1000M
@@ -20,10 +20,10 @@ export ncores=192
 sourcedir=$HOME
 amrocfold=amroc
 settingsfold=Testrun
-outfold=multi_long_1250_PR40_0_Inert_UnderJet
+outfold=multi_1250_PR40_0_Air_UnderJet
 appfold=euler_chem
 simfold=2d/Shocktube/Lietal_2003/1250_PR40_0_Inert
-contd=1
+contd=0
 files_to_copy=("display*.in"  \
 				"init.dat" "source_toggle.dat"\
 				"run.py" "solver.in")

@@ -5,7 +5,7 @@
 #SBATCH --mail-type=FAIL
 #SBATCH --time=24:0:0
 #SBATCH --account=def-hoing
-#SBATCH --job-name=Ax_Air_1250_PR40_0_UnderJet
+#SBATCH --job-name=multi_Ax_Air_1250_PR40_0_UnderJet
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=192
 #SBATCH --mem-per-cpu=1000M
@@ -20,7 +20,7 @@ export ncores=192
 sourcedir=$HOME
 amrocfold=amroc
 settingsfold=Testrun
-outfold=Ax_Air_1250_PR40_0
+outfold=multi_Ax_Air_1250_PR40_0
 appfold=euler_chem
 simfold=2d/Shocktube/Lietal_2003/Ax_Air_1250_40
 contd=0

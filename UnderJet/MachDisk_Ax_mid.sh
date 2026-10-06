@@ -5,7 +5,7 @@
 #SBATCH --mail-type=FAIL
 #SBATCH --time=24:0:0
 #SBATCH --account=def-hoing
-#SBATCH --job-name=multi_Air_1250_PR40_0_UnderJet
+#SBATCH --job-name=MD-AX-002
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=192
 #SBATCH --mem-per-cpu=1000M
@@ -20,9 +20,9 @@ export ncores=192
 sourcedir=$HOME
 amrocfold=amroc
 settingsfold=Testrun
-outfold=multi_1250_PR40_0_Air_UnderJet
+outfold=MachDisk_Ax_mid
 appfold=euler_chem
-simfold=2d/Shocktube/Lietal_2003/1250_PR40_0_Air
+simfold=2d/Shocktube/Lietal_2003/MachDisk_Ax_mid
 contd=0
 files_to_copy=("display*.in"  \
 				"init.dat" "source_toggle.dat"\
